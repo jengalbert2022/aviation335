@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">  
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Arriving Flights</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Arriving Flights for <%= icao %></h1>
+
+    <% if (flights && flights.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Flight Number</th>
+            <th>Date</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% flights.forEach(flight => { %>
+          <tr>
+            <td><%= flight.flnr %></td>
+            <td><%= flight.date %></td>
+            <td><%= flight.departure_ident %></td>
+            <td><%= flight.arrival_ident %></td>
+            <td><%= flight.status %></td>
+          </tr>
+        <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No arriving flight data found for this airport.</p>
+    <% } %>
+
+    <p><a href="/">Search Again</a></p>
+    <p><a href="/history">View Search History</a></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">  
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Arrival Flight Finder</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Find Arriving Flights for an Airport</h1>
+    <form action="/search" method="POST">
+      <label for="icao">Enter ICAO Code: (e.g.: KSFO for San Francisco)</label>
+      <input type="text" name="icao" id="icao" required placeholder="e.g. KSFO">
+      <button type="submit">Search</button>
+    </form>
+
+    <p><a href="/history">View Search History of Airports</a></p>
+  </div>
+</body>
+</html>
