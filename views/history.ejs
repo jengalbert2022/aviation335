@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">  
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Search History</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Search History</h1>
+    <% if (searches && searches.length > 0) { %>
+      <ul>
+        <% searches.forEach(item => { %>
+          <li><%= item.icao %> (Searched on: <%= item.searchDate.toLocaleString() %>)</li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p>No searches yet</p>
+    <% } %>
+
+    <p><a href="/">Go Back</a></p>
+  </div>
+</body>
+</html>
